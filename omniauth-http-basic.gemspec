@@ -2,10 +2,10 @@
 require File.expand_path('../lib/omniauth-http-basic/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.add_dependency 'omniauth', '~> 1.0'
-  gem.add_dependency 'faraday', '~> 0.7.5'
+  gem.add_dependency 'omniauth'
+  gem.add_dependency 'faraday'
 
-  gem.add_development_dependency 'rspec', '~> 2.7'
+  gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'rack-test'
   gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'webmock'
