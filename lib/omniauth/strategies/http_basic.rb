@@ -8,13 +8,22 @@ module OmniAuth
 
       args [:endpoint]
 
-      option :title,   "Http Basic"
+      option :title,          "Http Basic"
+      option :username_label, "Username"
+      option :password_label, "Password"
+
+
       option :headers, {}
 
       def request_phase
-        OmniAuth::Form.build(:title => options.title, :url => callback_path) do
-          text_field 'Username', 'username'
-          password_field 'Password', 'password'
+        OmniAuth::Form.build(
+          :title => options.title,
+          :url => callback_path,
+          :username_label => options.username_label,
+          :password_label => options.password_label
+        ) do
+          text_field options[:username_label], 'username'
+          password_field options[:password_label], 'password'
         end.to_response
       end
 
